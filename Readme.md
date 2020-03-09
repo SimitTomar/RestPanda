@@ -1,4 +1,4 @@
-# Restful APIs
+# RestPanda - Set of Restful APIs
 
 Set of Restful CRUD APIs using Node.js, Express and MongoDB for rapid prototyping, demos & tutorials.
 
