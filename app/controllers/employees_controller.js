@@ -2,7 +2,7 @@ const Employees = require('../models/employees_model.js');
 const {GENDER_CONSTANTS, TITLE_CONSTANTS} = require('../constants/employees_constants');
 
 // Create and Save new Employees
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
     // Validate request
     // if(!req.body.firstName) {
     //     return res.status(400).send({
@@ -11,8 +11,8 @@ exports.create = (req, res) => {
     // };
 
     // Create Employees
-    const employees = new Employees({
-        name: req.body.name,
+    const employee = new Employees({
+        employeeName: req.body.employeeName,
         emailId: req.body.emailId,
         gender: req.body.gender,
         title: req.body.title,
@@ -20,20 +20,31 @@ exports.create = (req, res) => {
         experience: req.body.experience,
     });
 
-    // Save Employees in the database
-    employees.save()
-    .then(data => {
-        res.send(data);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message || "Some error occurred while creating the Employees."
+    const employeeData = await Employees.findOne({employeeName: employee.employeeName});
+    if(employeeData === null){
+        // Save Employee in the database
+        employee.save()
+        .then(data => {
+            res
+            .status(201)
+            .send(data);
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while creating the Employee."
+            });
         });
-    });
+    } else{
+        res.status(500).send({
+            message: `Employee ${employee.employeeName} already exists`
+        });
+    }
+
+
 };
 
 // Retrieve and return all employees from the database.
-exports.findAll = (req, res) => {
-    Employees.find()
+exports.findAll = async (req, res) => {
+    await Employees.find()
     .then(employees => {
         let filteredArray = employees;
 
@@ -104,83 +115,77 @@ function _filterDataBasedOnTitle (employees, title) {
     return _filteredEmployeesBasedOnTitle;
 };
 
-// Find a single customer with a employeesId
-exports.findOne = (req, res) => {
-    Employees.findById(req.params.employeesId)
-    .then(customer => {
-        if(!customer) {
+// Find a single employee with a employeeName
+exports.findOne = async (req, res) => {
+    await Employees.findOne({employeeName: req.params.employeeName})
+    .then(employee => {
+        if(!employee) {
             return res.status(404).send({
-                message: `Customer not found with id ${req.params.employeesId}`
+                message: `Employee not found with employeeName ${req.params.employeeName}`
             });            
         }
-        res.send(customer);
+        res.send(employee);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: `Customer not found with id ${req.params.employeesId}`
+                message: `Employee not found with employeeName ${req.params.employeeName}`
             });                
         }
         return res.status(500).send({
-            message: `Error retrieving customer with id ${req.params.employeesId}`
+            message: `Error retrieving employee with employeeName ${req.params.employeeName}`
         });
     });
 };
 
-// Update employees identified by the employeesId in the request
-exports.update = (req, res) => {
-    // Validate Request
-    // if(!req.body.content) {
-    //     return res.status(400).send({
-    //         message: "Customer content can not be empty"
-    //     });
-    // }
+// Update employees identified by the employeeName in the request
+exports.update = async (req, res) => {
 
-    // Find employees and update it with the request body
-    Employees.findByIdAndUpdate(req.params.employeesId, {
-        name: req.body.name,
+    // Find employee and update it with the request body
+    await Employees.findOneAndUpdate({employeeName: req.params.employeeName}, {
+        employeeName: req.body.employeeName,
         emailId: req.body.emailId,
         gender: req.body.gender,
         title: req.body.title,
         currentSalary: req.body.currentSalary,
         experience: req.body.experience,
     }, {new: true})
-    .then(customer => {
-        if(!customer) {
+    .then(employee => {
+        if(!employee) {
             return res.status(404).send({
-                message: `Customer not found with id ${req.params.employeesId}`
+                message: `Employee not found with employeeName ${req.params.employeeName}`
             });
         }
-        res.send(customer);
+        res.send(employee);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: `Customer not found with id ${req.params.employeesId}`
+                message: `Employee not found with employeeName ${req.params.employeeName}`
             });                
         }
         return res.status(500).send({
-            message: `Error updating customer with id ${req.params.employeesId}`
+            message: `Error updating employee with employeeName ${req.params.employeeName}`
         });
     });
 };
 
-// Delete a employees with the specified employeesId in the request
-exports.delete = (req, res) => {
-    Employees.findByIdAndRemove(req.params.employeesId)
-    .then(customer => {
-        if(!customer) {
+// Delete a employees with the specified employeeName in the request
+exports.delete = async (req, res) => {
+    await Employees.findOneAndRemove({employeeName: req.params.employeeName})
+    .then(employee => {
+        if(!employee) {
             return res.status(404).send({
-                message: `Customer not found with id ${req.params.employeesId}`
+                message: `Employee not found with employeeName ${req.params.employeeName}`
             });
         }
-        res.send({message: "Customer deleted successfully!"});
+        res.send({message: "Employee deleted successfully!"});
     }).catch(err => {
-        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
+        if(err.kind === 'ObjectId' || err.employeeName === 'NotFound') {
             return res.status(404).send({
-                message: `Customer not found with id ${req.params.employeesId}`
+                message: `Employee not found with employeeName ${req.params.employeeName}`
             });                
         }
         return res.status(500).send({
-            message: `Could not delete customer with id ${req.params.employeesId}`
+            message: `Could not delete employee with employeeName ${req.params.employeeName}`
         });
     });
 };
