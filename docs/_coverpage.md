@@ -10,8 +10,9 @@
 - ⚡️️  Supports all CRUD operations
 - 💎 Language Agnostic APIs that conform to REST principles
 - 🔥 Business logic that is helpful in explaing API mocking
-- 📼 Path & Query Parameters, Headers & Optional fields for exhaustive coverage 
 - ⏱ Configurable Delayed API Response
+- 📼 Path & Query Parameters, Headers & Optional fields for exhaustive coverage 
+
 
 <div class="buttons">
   <a href="https://github.com/SimitTomar/RestPanda" target="_blank"><span>GitHub</span></a>
