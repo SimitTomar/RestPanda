@@ -10,7 +10,7 @@
 - ⚡️️  Supports all CRUD operations
 - 💎 Language Agnostic APIs that conform to REST principles
 - 🔥 Business logic that is helpful in explaing API mocking
-- 📼 Path Parameters, Query Parameters, Headers & Optional fields for exhaustive coverage 
+- 📼 Path & Query Parameters, Headers & Optional fields for exhaustive coverage 
 - ⏱ Configurable Delayed API Response
 
 <div class="buttons">
