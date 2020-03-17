@@ -17,7 +17,7 @@
 - 🔥 Path/Query Parameters, Headers & Optional fields for exhaustive coverage
 
 [GitHub](https://github.com/SimitTomar/RestPanda)
-[Get Started](#quick-start)
+[Get Started](https://github.com/SimitTomar/RestPanda/blob/master/Readme.md)
 
 <!-- <div class="buttons">
   <a href="https://github.com/SimitTomar/RestPanda" target="_blank"><span>GitHub</span></a>
