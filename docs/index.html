@@ -6,7 +6,14 @@
   <title>RestPanda - Set of Restful APIs for quick prototyping, demos & tutorials</title>
   <meta name="description" content="Set of Restful CRUD APIs using Node.js, Express and MongoDB for rapid prototyping, demos & tutorials.">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+  <link
+  rel="shortcut icon"
+  href="assets/images/favicon.ico"
+  type="image/x-icon"
+  />
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
@@ -15,35 +22,19 @@
 <script>
   window.$docsify = {
     loadSidebar: true,
-    subMaxLevel: 2,
     repo: 'RestPanda',
     name: 'RestPanda',
     coverpage: true,
+    onlyCover: true,
+    auto2top: true,
+    autoHeader: false,
+    subMaxLevel: 2,
+    maxLevel: 4,
     search: 'auto',
     search: [
       '/',
       'getting-started',
-      'guide-architecture',
-      'toolbox-api',
-      'toolbox-config',
-      'toolbox-filesystem',
-      'toolbox-semver',
-      'toolbox-http',
-      'toolbox-meta',
-      'toolbox-parameters',
-      'toolbox-patching',
-      'toolbox-print',
-      'toolbox-prompt',
-      'toolbox-semver',
-      'toolbox-strings',
-      'toolbox-system',
-      'toolbox-template',
-      'tutorial-making-a-plugin',
-      'tutorial-making-a-movie-cli',
-      'runtime',
-      'plugins',
-      'contributing',
-      'sniff',
+      'contributing'
 
     ]
   }
