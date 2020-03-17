@@ -16,12 +16,8 @@
 - ⏱ Configurable delayed API Response
 - 🔥 Path/Query Parameters, Headers & Optional fields for exhaustive coverage
 
+
 [GitHub](https://github.com/SimitTomar/RestPanda)
 [Get Started](#quick-start)
-
-<!-- <div class="buttons">
-  <a href="https://github.com/SimitTomar/RestPanda" target="_blank"><span>GitHub</span></a>
-  <a href="#/README"><span>Get Started</span></a>
-</div> -->
 
 ![color](#ffffff)
