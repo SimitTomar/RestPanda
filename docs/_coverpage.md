@@ -1,6 +1,6 @@
-<div class="restpanda-logo">
-  <div class="logo"></div>
-</div>
+<!-- <div class="restpanda-logo"> -->
+<div class="logo"></div>
+<!-- </div> -->
 
 <!-- ![logo](assets/images/wordmark-logo-alt.png) -->
 
