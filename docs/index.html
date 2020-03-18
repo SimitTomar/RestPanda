@@ -18,7 +18,7 @@
 
 <body>
   <div id="app"></div>
-</body>
+
 <script>
   window.$docsify = {
     loadSidebar: true,
@@ -31,18 +31,30 @@
     subMaxLevel: 2,
     maxLevel: 4,
     search: 'auto',
-    search: [
-      '/',
-      'getting-started',
-      'contributing'
-
-    ]
+    alias: {
+          '/.*/_sidebar.md': '/_sidebar.md',
+          '.*?/CHANGELOG':
+            'https://raw.githubusercontent.com/SimitTomar/RestPanda/master/docs/CHANGELOG.md',
+          '.*?/CONTRIBUTING':
+            'https://raw.githubusercontent.com/SimitTomar/RestPanda/master/docs/CONTRIBUTING.md'
+        },
+        homepage:
+          'https://raw.githubusercontent.com/SimitTomar/RestPanda/master/docs/README.md',
+          search: {
+          paths: 'auto',
+          placeholder: 'Search',
+          noData: 'No Results.'
+        },
+        ga: 'UA-120716183-1'
   }
 </script>
-<script src="//unpkg.com/docsify/lib/docsify.js"></script>
-<script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
-<script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-jsx.js"></script>
-
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+<script src="//unpkg.com/docsify-copy-code@2"></script>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+</body>
 </html>
