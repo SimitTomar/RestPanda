@@ -1,6 +1,6 @@
 # RestPanda - Set of Restful APIs
 
-Set of Restful CRUD APIs based on Node.js for rapid prototyping, demos & tutorials.
+Set of Restful CRUD APIs based on Node.js for rboilerplates, prototypes, demos & courses
 
 
 # Quick Start
@@ -26,36 +26,49 @@ npm run start
 You can browse the apis at <http://localhost:3000>
 
 
-## API Details
+## APIs
 
-The below section outlines details around the APIs
+The below sections outlines the Sequence Diagram & Details around the APIs
 
-<!-- toc -->
-* [employees](#employees)
-* [newSalary](#newSalary)
-<!-- tocstop -->
+* [`Sequence Diagram`](#Sequence_Diagram)
+* [`Details`](#Details)
 
-### employees
+
+### `Sequence Diagram`
+
+![api_sequence_diagram](assets/images/api_sequence_diagram.png)
+
+
+### `Details`
+
+* [`employees`](#employees)
+* [`newSalary`](#newSalary)
+
+
+#### `employees`
 
 <!-- employees -->
 
 The employees API can be used to create/store employee information. It contains the following methods:
 
-<!-- toc -->
-* [POST](#POST)
-* [GET](#GET)
-* [PUT](#PUT)
-* [DELETE](#DELETE)
-<!-- tocstop -->
+* [`POST`](#POST)
+* [`GET`](#GET)
+* [`PUT`](#PUT)
+* [`DELETE`](#DELETE)
 
-### POST
 
-#### Endpoint: 
+##### `POST`
+* [`Endpoint`](#Endpoint)
+* [`Body`](#Body)
+* [`Sample Curl Request`](#Sample_Curl_Request)
+* [`Response Body`](#Response_Body)
+
+###### `Endpoint`: 
 ```
 /employees - Use this endpoint to add a new employee to the DB
 ```
 
-#### Body:
+###### `Body`:
 ```
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
@@ -66,7 +79,7 @@ The employees API can be used to create/store employee information. It contains 
 | currentSalary | Number    | true     | 100000  |
 | experience    | Number    | true     | 8       |
 ```
-#### Sample Curl Request:
+###### `Sample Curl Request`:
 
 ```
 curl --location --request POST 'http://localhost:3000/employees' \
@@ -81,7 +94,7 @@ curl --location --request POST 'http://localhost:3000/employees' \
 }'
 ```
 
-#### Response Body:
+#### `Response Body`:
 
 ```
 {
