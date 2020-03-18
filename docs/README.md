@@ -30,9 +30,10 @@ You can browse the apis at <http://localhost:3000>
 
 The below sections outlines the Sequence Diagram & Details around the APIs
 
+<!-- toc -->
 * [`Sequence Diagram`](#sequence_diagram)
 * [`Details`](#details)
-
+<!-- tocstop -->
 
 ### `Sequence Diagram`
 <!-- sequence_diagram -->
