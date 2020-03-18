@@ -30,17 +30,19 @@ You can browse the apis at <http://localhost:3000>
 
 The below sections outlines the Sequence Diagram & Details around the APIs
 
-* [`Sequence Diagram`](#Sequence_Diagram)
-* [`Details`](#Details)
+* [`Sequence Diagram`](#sequence_diagram)
+* [`Details`](#details)
 
 
 ### `Sequence Diagram`
+<!-- sequence_diagram -->
 
 ![api_sequence_diagram](assets/images/api_sequence_diagram.png)
 
+<!-- sequence_diagramstop -->
 
 ### `Details`
-
+<!-- details -->
 * [`employees`](#employees)
 * [`newSalary`](#newSalary)
 
@@ -51,13 +53,14 @@ The below sections outlines the Sequence Diagram & Details around the APIs
 
 The employees API can be used to create/store employee information. It contains the following methods:
 
-* [`POST`](#POST)
-* [`GET`](#GET)
-* [`PUT`](#PUT)
-* [`DELETE`](#DELETE)
+* [`POST`](#post)
+* [`GET`](#get)
+* [`PUT`](#put)
+* [`DELETE`](#delete)
 
 
 ##### `POST`
+<!-- post -->
 * [`Endpoint`](#Endpoint)
 * [`Body`](#Body)
 * [`Sample Curl Request`](#Sample_Curl_Request)
@@ -110,28 +113,29 @@ curl --location --request POST 'http://localhost:3000/employees' \
     "__v": 0
 }
 ```
+<!-- poststop -->
 
+##### GET
+<!-- get -->
 
-### GET
-
-#### Endpoint: 
+###### Endpoint: 
 ```
 /employees/:employeeName - Use this endpoint to Get information of one employee
 ```
 
-#### Path Parameter:
+###### Path Parameter:
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
 | employeeName  | String    | false     | user001 |
 
-#### Sample Curl Request:
+###### Sample Curl Request:
 
 ```
 curl --location --request GET 'http://localhost:3000/employees' \
 --header 'Content-Type: application/json'
 ```
 
-#### Response Body:
+###### Response Body:
 
 ```
 [
@@ -150,19 +154,19 @@ curl --location --request GET 'http://localhost:3000/employees' \
 ]
 ```
 
-#### Endpoint: 
+###### Endpoint: 
 ```
 /employees - Use this endpoint to Get information of all the employees available in the DB
 ```
 
-#### Sample Curl Request:
+###### Sample Curl Request:
 
 ```
 curl --location --request GET 'http://localhost:3000/employees/user001' \
 --header 'Content-Type: application/json'
 ```
 
-#### Response Body:
+###### Response Body:
 
 ```
 {
@@ -178,8 +182,10 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
     "__v": 0
 }
 ```
-
+<!-- getstop -->
 
 <!-- employeesstop -->
+
+<!-- detailsstop -->
 
 [link]: https://docs.mongodb.com/manual/installation/
