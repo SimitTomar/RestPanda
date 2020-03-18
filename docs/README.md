@@ -1,9 +1,10 @@
 # RestPanda - Set of Restful APIs
 
-Set of Restful CRUD APIs using Node.js, Express and MongoDB for rapid prototyping, demos & tutorials.
+Set of Restful CRUD APIs based on Node.js for rapid prototyping, demos & tutorials.
 
 
 # Quick Start
+
 
 ## Steps to Setup
 
@@ -24,6 +25,9 @@ npm run start
 
 You can browse the apis at <http://localhost:3000>
 
+
+## API Details
+
 The below section outlines details around the APIs
 
 <!-- toc -->
@@ -31,7 +35,7 @@ The below section outlines details around the APIs
 * [newSalary](#newSalary)
 <!-- tocstop -->
 
-## employees
+### employees
 
 <!-- employees -->
 
