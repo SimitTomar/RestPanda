@@ -7,8 +7,6 @@
 ![logo](assets/images/restpanda.png)
 
 > Set of Restful APIs for quick prototyping, demos & tutorials
-
-
 - 🚀 Simple & Intuitive set of APIs hosted locally to get you started instantly
 - ⚡️️  Supports all CRUD operations
 - 💎 Language Agnostic APIs that conform to REST principles
