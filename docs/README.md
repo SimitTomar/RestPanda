@@ -1,11 +1,9 @@
-# RestPanda - Set of Restful APIs
+# Overview
 
 Set of Restful CRUD APIs based on Node.js for rboilerplates, prototypes, demos & courses
 
 
-# Quick Start
-
-## Steps to Setup
+# Steps to setup
 
 Install mongodb by following the instructions given on this [link]
 
@@ -24,7 +22,7 @@ npm run start
 You can browse the apis at <http://localhost:3000>
 
 
-## APIs
+# APIs
 
 The below sections outlines the Sequence Diagram & Details around the APIs
 
@@ -34,7 +32,7 @@ The below sections outlines the Sequence Diagram & Details around the APIs
 
 <!-- tocstop -->
 
-### SequenceDiagram
+## SequenceDiagram
 
 <!-- sequenceDiagram -->
 
@@ -43,7 +41,7 @@ The below sections outlines the Sequence Diagram & Details around the APIs
 
 <!-- sequenceDiagramtop -->
 
-### Details
+## Details
 <!-- details -->
 
 This section outlines the details of the below 2 APIs:
@@ -51,14 +49,14 @@ This section outlines the details of the below 2 APIs:
 * [employees](#employees)
 * [newSalary](#newSalary)
 
-#### employees
+### employees
 
 The employees API can be used to create/store employee information. It contains the following methods:
 
 * [/employees](#/employees)
 * [/employees/:employeeName](#/employees/:employeeName)
 
-##### /employees
+#### /employees
 
 <!-- /employees -->
 
@@ -170,7 +168,7 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
 <!-- /employeesstop -->
 
 
-##### /employees/:employeeName
+#### /employees/:employeeName
 <!-- /employees/:employeeName -->
 
 **Methods Supported:**
@@ -232,7 +230,7 @@ curl --location --request GET 'http://localhost:3000/employees' \
 <!-- /employees/:employeeNamestop -->
 
 
-#### `newSalary`
+### `newSalary`
 This section provides details of all the methods that can give insights on two features (columns)
 
 
