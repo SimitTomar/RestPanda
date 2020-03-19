@@ -62,8 +62,8 @@ The employees API can be used to create/store employee information. It contains 
 
 **Methods Supported:**
 
-* POST
-* GET
+##### POST
+##### GET
 
 ##### POST
 
