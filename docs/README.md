@@ -125,7 +125,7 @@ curl --location --request POST 'http://localhost:3000/employees' \
 ##### GET
 <!-- get -->
 
-> Endpoint /employees/:employeeName - Use this endpoint to Get information of one employee
+> Endpoint: /employees/:employeeName - Use this endpoint to Get information of one employee
 
 
 ###### Path Parameter
@@ -173,7 +173,7 @@ curl --location --request GET 'http://localhost:3000/employees' \
 </details>
 
 
-> Endpoint /employees - Use this endpoint to Get information of all the employees available in the DB
+> Endpoint: /employees - Use this endpoint to Get information of all the employees available in the DB
 
 
 <details>
