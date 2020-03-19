@@ -62,7 +62,7 @@ The employees API can be used to create/store employee information. It contains 
 
 <!-- post -->
 
-> Endpoint: /employees - Use this endpoint to add a new employee to the DB
+> Use this endpoint to add a new employee to the DB
 
 
 ###### Body
