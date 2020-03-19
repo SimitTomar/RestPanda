@@ -53,17 +53,17 @@ This section outlines the details of the below 2 APIs:
 
 The employees API can be used to create/store employee information. It contains the following methods:
 
-* [/employees](#/employees)
-* [/employees/:employeeName](#/employees/:employeeName)
+<!-- * [/employees](#/employees)
+* [/employees/:employeeName](#/employees/:employeeName) -->
 
 #### /employees
 
 <!-- /employees -->
 
-**Methods Supported:**
+<!-- **Methods Supported:** -->
 
-* [POST](#post)
-* [GET](#get)
+<!-- * [POST](#post)
+* [GET](#get) -->
 
 ##### POST
 
@@ -127,7 +127,7 @@ curl --location --request POST 'http://localhost:3000/employees' \
 
 ##### GET
 
-> Use this endpoint to Get information of all the employees available in the DB
+> Use this method to get information of all the employees available in the DB
 
 
 <details>
@@ -171,16 +171,16 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
 #### /employees/:employeeName
 <!-- /employees/:employeeName -->
 
-**Methods Supported:**
+<!-- **Methods Supported:**
 
 * [GET](#get)
 * [PUT](#put)
-* [DELETE](#delete)
+* [DELETE](#delete) -->
 
 
 ##### GET
 
-> Use this endpoint to Get information of one employee
+> Use this method to get information of one employee
 
 
 ###### Path Parameter
