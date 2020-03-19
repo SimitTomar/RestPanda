@@ -60,10 +60,8 @@ The employees API can be used to create/store employee information. It contains 
 
 <!-- /employees -->
 
-**Methods Supported:**
+> **Methods Supported are POST and GET**
 
-##### POST
-##### GET
 
 ##### POST
 
@@ -171,11 +169,7 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
 #### /employees/:employeeName
 <!-- /employees/:employeeName -->
 
-<!-- **Methods Supported:**
-
-* [GET](#get)
-* [PUT](#put)
-* [DELETE](#delete) -->
+> **Methods Supported are GET, PUT and GET**
 
 
 ##### GET
