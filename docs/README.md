@@ -60,10 +60,6 @@ The employees API can be used to create/store employee information. It contains 
 ##### `POST`
 
 <!-- post -->
-* [`Endpoint`](#Endpoint)
-* [`Body`](#Body)
-* [`Sample Curl Request`](#Sample_Curl_Request)
-* [`Response Body`](#Response_Body)
 
 ###### `Endpoint`: 
 ```
@@ -81,7 +77,9 @@ The employees API can be used to create/store employee information. It contains 
 | currentSalary | Number    | true     | 100000  |
 | experience    | Number    | true     | 8       |
 
-###### `Sample Curl Request`:
+<details>
+<summary> Sample Curl Request...</summary>
+<p>
 
 ```
 curl --location --request POST 'http://localhost:3000/employees' \
@@ -96,7 +94,13 @@ curl --location --request POST 'http://localhost:3000/employees' \
 }'
 ```
 
-#### `Response Body`:
+</p>
+</details>
+
+
+<details>
+<summary>Response Body...</summary>
+<p>
 
 ```
 {
@@ -112,6 +116,10 @@ curl --location --request POST 'http://localhost:3000/employees' \
     "__v": 0
 }
 ```
+
+</p>
+</details>
+
 <!-- poststop -->
 
 
