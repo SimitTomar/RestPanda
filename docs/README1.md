@@ -5,9 +5,11 @@ Set of Restful CRUD APIs based on Node.js for rboilerplates, prototypes, demos &
 
 # Quick Start
 
+
 ## Steps to Setup
 
 Install mongodb by following the instructions given on this [link]
+
 
 Install npm dependencies
 
@@ -29,36 +31,35 @@ You can browse the apis at <http://localhost:3000>
 The below sections outlines the Sequence Diagram & Details around the APIs
 
 <!-- toc -->
-* [SequenceDiagram](#sequenceDiagram)
-* [Details](#details)
-
+* [`Sequence`](#sequence)
+* [`Details`](#details)
 <!-- tocstop -->
 
-### SequenceDiagram
-
-<!-- sequenceDiagram -->
+### `sequence`
+<!-- sequence -->
 
 ![api_sequence_diagram](assets/images/api_sequence_diagram.png)
 
 
-<!-- sequenceDiagramtop -->
-
-### Details
+### `Details`
 <!-- details -->
-
-The Library provides insight methods for the below 3 levels
 * [`employees`](#employees)
 * [`newSalary`](#newSalary)
 
+
 #### `employees`
+
+<!-- employees -->
 
 The employees API can be used to create/store employee information. It contains the following methods:
 
 * [`POST`](#post)
 * [`GET`](#get)
+* [`PUT`](#put)
+* [`DELETE`](#delete)
+
 
 ##### `POST`
-
 <!-- post -->
 * [`Endpoint`](#Endpoint)
 * [`Body`](#Body)
@@ -113,7 +114,6 @@ curl --location --request POST 'http://localhost:3000/employees' \
 }
 ```
 <!-- poststop -->
-
 
 ##### GET
 <!-- get -->
@@ -184,9 +184,10 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
 ```
 <!-- getstop -->
 
-
-#### `newSalary`
-This section provides details of all the methods that can give insights on two features (columns)
-
+<!-- employeesstop -->
 
 <!-- detailsstop -->
+
+<!-- sequencestop -->
+
+[link]: https://docs.mongodb.com/manual/installation/
