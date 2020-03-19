@@ -1,6 +1,6 @@
 # Overview
 
-Set of Restful CRUD APIs based on Node.js for rboilerplates, prototypes, demos & courses
+Set of Restful CRUD APIs based on Node.js for boilerplates, prototypes, demos & courses
 
 
 # Steps to setup
