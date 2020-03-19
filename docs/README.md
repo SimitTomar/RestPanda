@@ -46,25 +46,24 @@ The below sections outlines the Sequence Diagram & Details around the APIs
 ### Details
 <!-- details -->
 
-The Library provides insight methods for the below 3 levels
-* [`employees`](#employees)
-* [`newSalary`](#newSalary)
+This section outlines the details of the below 2 APIs:
+
+* [employees](#employees)
+* [newSalary](#newSalary)
 
 #### employees
 
 The employees API can be used to create/store employee information. It contains the following methods:
 
-* [`POST`](#post)
-* [`GET`](#get)
+* [POST](#post)
+* [GET](#get)
 
 ##### POST
 
 <!-- post -->
 
-###### Endpoint
-```
-/employees - Use this endpoint to add a new employee to the DB
-```
+> Endpoint: /employees - Use this endpoint to add a new employee to the DB
+
 
 ###### Body
 
@@ -126,13 +125,10 @@ curl --location --request POST 'http://localhost:3000/employees' \
 ##### GET
 <!-- get -->
 
-###### Endpoint
+> Endpoint /employees/:employeeName - Use this endpoint to Get information of one employee
 
-```
-/employees/:employeeName - Use this endpoint to Get information of one employee
-```
 
-###### Path Parameter:
+###### Path Parameter
 
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
@@ -177,10 +173,8 @@ curl --location --request GET 'http://localhost:3000/employees' \
 </details>
 
 
-###### Endpoint
-```
-/employees - Use this endpoint to Get information of all the employees available in the DB
-```
+> Endpoint /employees - Use this endpoint to Get information of all the employees available in the DB
+
 
 <details>
 <summary>Sample Curl Request...</summary>
