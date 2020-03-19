@@ -50,23 +50,23 @@ The Library provides insight methods for the below 3 levels
 * [`employees`](#employees)
 * [`newSalary`](#newSalary)
 
-#### `employees`
+#### employees
 
 The employees API can be used to create/store employee information. It contains the following methods:
 
 * [`POST`](#post)
 * [`GET`](#get)
 
-##### `POST`
+##### POST
 
 <!-- post -->
 
-###### `Endpoint`: 
+###### Endpoint
 ```
 /employees - Use this endpoint to add a new employee to the DB
 ```
 
-###### `Body`:
+###### Body
 
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
@@ -126,24 +126,35 @@ curl --location --request POST 'http://localhost:3000/employees' \
 ##### GET
 <!-- get -->
 
-###### Endpoint: 
+###### Endpoint
+
 ```
 /employees/:employeeName - Use this endpoint to Get information of one employee
 ```
 
 ###### Path Parameter:
+
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
 | employeeName  | String    | false     | user001 |
 
-###### Sample Curl Request:
+
+<details>
+<summary>Sample Curl Request...</summary>
+<p>
 
 ```
 curl --location --request GET 'http://localhost:3000/employees' \
 --header 'Content-Type: application/json'
 ```
 
-###### Response Body:
+</p>
+</details>
+
+
+<details>
+<summary>Response Body...</summary>
+<p>
 
 ```
 [
@@ -162,19 +173,31 @@ curl --location --request GET 'http://localhost:3000/employees' \
 ]
 ```
 
-###### Endpoint: 
+</p>
+</details>
+
+
+###### Endpoint
 ```
 /employees - Use this endpoint to Get information of all the employees available in the DB
 ```
 
-###### Sample Curl Request:
+<details>
+<summary>Sample Curl Request...</summary>
+<p>
 
 ```
 curl --location --request GET 'http://localhost:3000/employees/user001' \
 --header 'Content-Type: application/json'
 ```
 
-###### Response Body:
+</p>
+</details>
+
+
+<details>
+<summary>Response Body...</summary>
+<p>
 
 ```
 {
@@ -190,6 +213,10 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
     "__v": 0
 }
 ```
+
+</p>
+</details>
+
 <!-- getstop -->
 
 
