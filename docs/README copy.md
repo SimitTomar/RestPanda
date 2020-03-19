@@ -55,21 +55,14 @@ This section outlines the details of the below 2 APIs:
 
 The employees API can be used to create/store employee information. It contains the following methods:
 
-* [/employees](#/employees)
-* [/employees/:employeeName](#/employees/:employeeName)
-
-##### /employees
-
-<!-- /employees -->
-
-**Methods Supported:**
-
 * [POST](#post)
 * [GET](#get)
 
 ##### POST
 
-> Use this method to add a new employee to the DB
+<!-- post -->
+
+> Endpoint: /employees - Use this endpoint to add a new employee to the DB
 
 
 ###### Body
@@ -126,63 +119,13 @@ curl --location --request POST 'http://localhost:3000/employees' \
 </p>
 </details>
 
-
-##### GET
-
-> Use this endpoint to Get information of all the employees available in the DB
-
-
-<details>
-<summary>Sample Curl Request...</summary>
-<p>
-
-```
-curl --location --request GET 'http://localhost:3000/employees/user001' \
---header 'Content-Type: application/json'
-```
-
-</p>
-</details>
-
-
-<details>
-<summary>Response Body...</summary>
-<p>
-
-```
-{
-    "_id": "5e7115d803b7cc50f8f93863",
-    "employeeName": "user001",
-    "emailId": "a@b.com",
-    "gender": "male",
-    "title": "manager",
-    "currentSalary": 100000,
-    "experience": 8,
-    "createdAt": "2020-03-17T18:24:24.365Z",
-    "updatedAt": "2020-03-17T18:24:24.365Z",
-    "__v": 0
-}
-```
-
-</p>
-</details>
-
-<!-- /employeesstop -->
-
-
-##### /employees/:employeeName
-<!-- /employees/:employeeName -->
-
-**Methods Supported:**
-
-* [GET](#get)
-* [PUT](#put)
-* [DELETE](#delete)
+<!-- poststop -->
 
 
 ##### GET
+<!-- get -->
 
-> Use this endpoint to Get information of one employee
+> Endpoint: /employees/:employeeName - Use this endpoint to Get information of one employee
 
 
 ###### Path Parameter
@@ -229,7 +172,46 @@ curl --location --request GET 'http://localhost:3000/employees' \
 </p>
 </details>
 
-<!-- /employees/:employeeNamestop -->
+
+> Endpoint: /employees - Use this endpoint to Get information of all the employees available in the DB
+
+
+<details>
+<summary>Sample Curl Request...</summary>
+<p>
+
+```
+curl --location --request GET 'http://localhost:3000/employees/user001' \
+--header 'Content-Type: application/json'
+```
+
+</p>
+</details>
+
+
+<details>
+<summary>Response Body...</summary>
+<p>
+
+```
+{
+    "_id": "5e7115d803b7cc50f8f93863",
+    "employeeName": "user001",
+    "emailId": "a@b.com",
+    "gender": "male",
+    "title": "manager",
+    "currentSalary": 100000,
+    "experience": 8,
+    "createdAt": "2020-03-17T18:24:24.365Z",
+    "updatedAt": "2020-03-17T18:24:24.365Z",
+    "__v": 0
+}
+```
+
+</p>
+</details>
+
+<!-- getstop -->
 
 
 #### `newSalary`
