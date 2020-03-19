@@ -51,19 +51,19 @@ This section outlines the details of the below 2 APIs:
 
 ### employees
 
-The employees API can be used to create/store employee information. It contains the following methods:
+The employees API can be used to create/store employee information. It contains the following Routes:
 
-<!-- * [/employees](#/employees)
-* [/employees/:employeeName](#/employees/:employeeName) -->
+* /employees
+* /employees/:employeeName
 
 #### /employees
 
 <!-- /employees -->
 
-<!-- **Methods Supported:** -->
+**Methods Supported:**
 
-<!-- * [POST](#post)
-* [GET](#get) -->
+* POST
+* GET
 
 ##### POST
 
