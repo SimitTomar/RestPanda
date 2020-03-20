@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 require('./app/routes/employees_routes.js')(app);
-require('./app/routes/salary_routes.js')(app);
+require('./app/routes/new_salary_routes.js')(app);
 
 // listen for requests
 app.listen(port, () => {

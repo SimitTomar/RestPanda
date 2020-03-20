@@ -1,4 +1,4 @@
-// const Salary = require('../models/salary_model.js');
+// const newSalary = require('../models/new_salary_model.js');
 const supertest = require('supertest');
 const {employeesEndpoint} = require('../../config/api.config');
 
@@ -6,9 +6,9 @@ const {employeesEndpoint} = require('../../config/api.config');
 exports.Calculate = (req, res) => {
 
     //Validate request
-    if(!req.query.employeeName || !req.query.performanceRating) {
+    if(!req.query.employeeName || !req.header('performanceRating')) {
         return res.status(400).send({
-            message: "employeeName or performanceRating can not be empty"
+            message: "employeeName Query Parameter or performanceRating Header can not be empty"
         });
     };
 
@@ -17,7 +17,9 @@ exports.Calculate = (req, res) => {
         .expect(200)
         .end((err, employeeResponse) => {
             if (err) throw err;
-            const salaryResponse = employeeResponse.body.currentSalary * req.query.performanceRating;
-            res.send(salaryResponse.toString())
+            const newSalaryResponse = employeeResponse.body.currentSalary * req.header('performanceRating');
+            res.send({
+                "newSalary": newSalaryResponse
+            })
         })
 };
