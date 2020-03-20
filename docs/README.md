@@ -2,6 +2,12 @@
 
 Set of Restful CRUD APIs based on Node.js for boilerplates, prototypes, demos & courses
 
+- 🚀 Simple & Intuitive set of APIs hosted locally to get you started instantly
+- ⚡️️  Supports all CRUD operations
+- 💎 Language Agnostic APIs that conform to REST principles
+- 📼 Business logic that is helpful in explaing API mocking
+- ⏱ Configurable delayed API Response
+- 🔥 Path/Query Parameters, Headers & Optional fields for exhaustive coverage
 
 # Steps to setup
 
