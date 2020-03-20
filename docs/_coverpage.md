@@ -2,9 +2,7 @@
 <div class="logo"></div>
 <!-- </div> -->
 
-<!-- ![logo](assets/images/wordmark-logo-alt.png) -->
-
-![logo](assets/images/restpanda.png)
+![logo](assets/images/restpanda_logo.png)
 
 > Set of Restful APIs for boilerplates, prototypes, demos & courses
 - 🚀 Simple & Intuitive set of APIs hosted locally to get you started instantly
@@ -19,7 +17,7 @@
 [Get Started](#quick-start) -->
 
 <div class="buttons">
-  <a href="https://github.com/Netflix/pollyjs/" target="_blank"><span>GitHub</span></a>
+  <a href="https://github.com/SimitTomar/RestPanda" target="_blank"><span>GitHub</span></a>
   <a href="#/README"><span>Get Started</span></a>
 </div>
 
