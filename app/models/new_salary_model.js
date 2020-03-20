@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const SalarySchema = mongoose.Schema({
+const newSalarySchema = mongoose.Schema({
     employeeName: {
         type: String,
         required: true
@@ -15,4 +15,4 @@ const SalarySchema = mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Salary', SalarySchema);
+module.exports = mongoose.model('newSalary', newSalarySchema);
