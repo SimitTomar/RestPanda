@@ -1,2 +1,3 @@
 * [Home](/)
-* [CONTRIBUTING](../CONTRIBUTING)
+* [Overview](../Overview)
+* [Contributing](../Contributing)
