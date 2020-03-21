@@ -1,2 +1,3 @@
-* [Home](/)
+* [HOME](/)
 * [CONTRIBUTING](CONTRIBUTING)
+* [LICENSE](LICENSE)
