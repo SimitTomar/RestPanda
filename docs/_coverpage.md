@@ -15,7 +15,7 @@
 
 <div class="buttons">
   <a href="#/Overview"><span>Overview</span></a>
-  <a href="#/README"><span>Get Started</span></a>
+  <a href="#/Readme"><span>Get Started</span></a>
   <a href="https://github.com/SimitTomar/RestPanda" target="_blank"><span>GitHub</span></a>
 </div>
 
