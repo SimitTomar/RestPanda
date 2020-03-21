@@ -1,2 +1,2 @@
 * [Home](/)
-* [Contributing](../Contributing)
+* [CONTRIBUTING](../CONTRIBUTING)
