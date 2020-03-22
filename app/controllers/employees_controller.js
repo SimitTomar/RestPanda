@@ -3,12 +3,6 @@ const {GENDER_CONSTANTS, TITLE_CONSTANTS} = require('../constants/employees_cons
 
 // Create and Save new Employees
 exports.create = async (req, res) => {
-    // Validate request
-    // if(!req.body.firstName) {
-    //     return res.status(400).send({
-    //         message: "firstName can not be empty"
-    //     });
-    // };
 
     // Create Employees
     const employee = new Employees({
@@ -16,8 +10,7 @@ exports.create = async (req, res) => {
         emailId: req.body.emailId,
         gender: req.body.gender,
         title: req.body.title,
-        currentSalary: req.body.currentSalary,
-        experience: req.body.experience,
+        currentSalary: req.body.currentSalary
     });
 
     const employeeData = await Employees.findOne({employeeName: employee.employeeName});
@@ -146,8 +139,7 @@ exports.update = async (req, res) => {
         emailId: req.body.emailId,
         gender: req.body.gender,
         title: req.body.title,
-        currentSalary: req.body.currentSalary,
-        experience: req.body.experience,
+        currentSalary: req.body.currentSalary
     }, {new: true})
     .then(employee => {
         if(!employee) {

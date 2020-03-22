@@ -17,10 +17,6 @@ const EmployeesSchema = mongoose.Schema({
     currentSalary: {
         type: Number,
         required: true
-    },
-    experience: {
-        type: Number,
-        required: true
     }
 
 }, {
