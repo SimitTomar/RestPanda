@@ -69,7 +69,6 @@ The employees API can be used to create/store employee information. It contains 
 | gender        | String    | false    | male    |
 | title         | String    | true     | manager |
 | currentSalary | Number    | true     | 100000  |
-| experience    | Number    | true     | 8       |
 
 <details>
 <summary> Sample Curl Request...</summary>
@@ -83,8 +82,7 @@ curl --location --request POST 'http://localhost:3000/employees' \
     "emailId": "a@b.com",
     "gender": "male",
     "title": "manager",
-    "currentSalary": 100000,
-    "experience": 8
+    "currentSalary": 100000
 }'
 ```
 
@@ -93,7 +91,7 @@ curl --location --request POST 'http://localhost:3000/employees' \
 
 
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -104,7 +102,6 @@ curl --location --request POST 'http://localhost:3000/employees' \
     "gender": "male",
     "title": "manager",
     "currentSalary": 100000,
-    "experience": 8,
     "createdAt": "2020-03-17T18:24:24.365Z",
     "updatedAt": "2020-03-17T18:24:24.365Z",
     "__v": 0
@@ -132,7 +129,7 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
 </details>
 
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -143,7 +140,6 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
     "gender": "male",
     "title": "manager",
     "currentSalary": 100000,
-    "experience": 8,
     "createdAt": "2020-03-17T18:24:24.365Z",
     "updatedAt": "2020-03-17T18:24:24.365Z",
     "__v": 0
@@ -180,7 +176,7 @@ curl --location --request GET 'http://localhost:3000/employees' \
 </details>
 
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -192,7 +188,6 @@ curl --location --request GET 'http://localhost:3000/employees' \
         "gender": "male",
         "title": "manager",
         "currentSalary": 100000,
-        "experience": 8,
         "createdAt": "2020-03-17T18:24:24.365Z",
         "updatedAt": "2020-03-17T18:24:24.365Z",
         "__v": 0
@@ -222,7 +217,6 @@ curl --location --request GET 'http://localhost:3000/employees' \
 | gender        | String    | false    | male    |
 | title         | String    | true     | manager |
 | currentSalary | Number    | true     | 100000  |
-| experience    | Number    | true     | 8       |
 
 <details>
 <summary> Sample Curl Request...</summary>
@@ -236,8 +230,7 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
     "emailId": "a@b.com",
     "gender": "male",
     "title": "director",
-    "currentSalary": 120000,
-    "experience": 10
+    "currentSalary": 120000
 }'
 ```
 
@@ -245,7 +238,7 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
 </details>
 
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -256,7 +249,6 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
     "gender": "male",
     "title": "director",
     "currentSalary": 120000,
-    "experience": 10,
     "createdAt": "2020-03-17T18:24:24.365Z",
     "updatedAt": "2020-03-20T20:50:03.590Z",
     "__v": 0
@@ -289,7 +281,7 @@ curl --location --request DELETE 'http://localhost:3000/employees/user001' \
 </details>
 
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -318,7 +310,7 @@ The newSalary API can be used to calculate the Salary . It contains the followin
 
 | Field         | Data Type | Required  | Example |
 | ------------- |:---------:| ---------:| -------:|
-| employeeName  | String    | false     | user001 |
+| employeeName  | String    | true      | user001 |
 
 ###### Header
 
@@ -340,12 +332,12 @@ curl --location --request GET 'http://localhost:3000/newSalary?employeeName=user
 </details>
 
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
 {
-    "newSalary": 252000
+    "newSalary": 90000
 }
 ```
 
