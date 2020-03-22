@@ -19,28 +19,23 @@ npm run start
 
 You can browse the apis at <http://localhost:3000>
 
+____________________________________
 
 # APIs
 
+
 The below sections outlines the Sequence Diagram & Details around the APIs
 
-<!-- toc -->
 * [SequenceDiagram](#sequenceDiagram)
 * [Details](#details)
 
-<!-- tocstop -->
 
 ## SequenceDiagram
-
-<!-- sequenceDiagram -->
 
 ![api_sequence_diagram](assets/images/api_sequence_diagram.png)
 
 
-<!-- sequenceDiagramtop -->
-
 ## Details
-<!-- details -->
 
 This section outlines the details of the below 2 APIs:
 
@@ -60,7 +55,6 @@ The employees API can be used to create/store employee information. It contains 
 
 > **Methods Supported are POST and GET**
 
-
 ##### POST
 
 > Use this method to add a new employee to the DB
@@ -75,7 +69,6 @@ The employees API can be used to create/store employee information. It contains 
 | gender        | String    | false    | male    |
 | title         | String    | true     | manager |
 | currentSalary | Number    | true     | 100000  |
-| experience    | Number    | true     | 8       |
 
 <details>
 <summary> Sample Curl Request...</summary>
@@ -89,8 +82,7 @@ curl --location --request POST 'http://localhost:3000/employees' \
     "emailId": "a@b.com",
     "gender": "male",
     "title": "manager",
-    "currentSalary": 100000,
-    "experience": 8
+    "currentSalary": 100000
 }'
 ```
 
@@ -99,7 +91,7 @@ curl --location --request POST 'http://localhost:3000/employees' \
 
 
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -110,7 +102,6 @@ curl --location --request POST 'http://localhost:3000/employees' \
     "gender": "male",
     "title": "manager",
     "currentSalary": 100000,
-    "experience": 8,
     "createdAt": "2020-03-17T18:24:24.365Z",
     "updatedAt": "2020-03-17T18:24:24.365Z",
     "__v": 0
@@ -125,7 +116,6 @@ curl --location --request POST 'http://localhost:3000/employees' \
 
 > Use this method to get information of all the employees available in the DB
 
-
 <details>
 <summary>Sample Curl Request...</summary>
 <p>
@@ -138,9 +128,8 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
 </p>
 </details>
 
-
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -151,7 +140,6 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
     "gender": "male",
     "title": "manager",
     "currentSalary": 100000,
-    "experience": 8,
     "createdAt": "2020-03-17T18:24:24.365Z",
     "updatedAt": "2020-03-17T18:24:24.365Z",
     "__v": 0
@@ -161,26 +149,19 @@ curl --location --request GET 'http://localhost:3000/employees/user001' \
 </p>
 </details>
 
-<!-- /employeesstop -->
-
-
 #### /employees/:employeeName
-<!-- /employees/:employeeName -->
 
 > **Methods Supported are GET, PUT and GET**
-
 
 ##### GET
 
 > Use this method to get the information of an employee
-
 
 ###### Path Parameter
 
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
 | employeeName  | String    | false     | user001 |
-
 
 <details>
 <summary>Sample Curl Request...</summary>
@@ -194,9 +175,8 @@ curl --location --request GET 'http://localhost:3000/employees' \
 </p>
 </details>
 
-
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -208,7 +188,6 @@ curl --location --request GET 'http://localhost:3000/employees' \
         "gender": "male",
         "title": "manager",
         "currentSalary": 100000,
-        "experience": 8,
         "createdAt": "2020-03-17T18:24:24.365Z",
         "updatedAt": "2020-03-17T18:24:24.365Z",
         "__v": 0
@@ -218,7 +197,6 @@ curl --location --request GET 'http://localhost:3000/employees' \
 
 </p>
 </details>
-
 
 ##### PUT
 
@@ -230,7 +208,6 @@ curl --location --request GET 'http://localhost:3000/employees' \
 | ------------- |:---------:| --------:| -------:|
 | employeeName  | String    | false     | user001 |
 
-
 ###### Body
 
 | Field         | Data Type | Required | Example |
@@ -240,7 +217,6 @@ curl --location --request GET 'http://localhost:3000/employees' \
 | gender        | String    | false    | male    |
 | title         | String    | true     | manager |
 | currentSalary | Number    | true     | 100000  |
-| experience    | Number    | true     | 8       |
 
 <details>
 <summary> Sample Curl Request...</summary>
@@ -254,17 +230,15 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
     "emailId": "a@b.com",
     "gender": "male",
     "title": "director",
-    "currentSalary": 120000,
-    "experience": 10
+    "currentSalary": 120000
 }'
 ```
 
 </p>
 </details>
 
-
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -275,7 +249,6 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
     "gender": "male",
     "title": "director",
     "currentSalary": 120000,
-    "experience": 10,
     "createdAt": "2020-03-17T18:24:24.365Z",
     "updatedAt": "2020-03-20T20:50:03.590Z",
     "__v": 0
@@ -284,7 +257,6 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
 
 </p>
 </details>
-
 
 ##### DELETE
 
@@ -295,7 +267,6 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
 | employeeName  | String    | false     | user001 |
-
 
 <details>
 <summary> Sample Curl Request...</summary>
@@ -309,9 +280,8 @@ curl --location --request DELETE 'http://localhost:3000/employees/user001' \
 </p>
 </details>
 
-
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
@@ -323,9 +293,6 @@ curl --location --request DELETE 'http://localhost:3000/employees/user001' \
 </p>
 </details>
 
-<!-- /employees/:employeeNamestop -->
-
-
 ### `newSalary`
 The newSalary API can be used to calculate the Salary . It contains the following Route:
 
@@ -333,28 +300,23 @@ The newSalary API can be used to calculate the Salary . It contains the followin
 
 #### /newSalary
 
-<!-- /newSalary -->
-
 > **Method Supported is GET**
 
 ##### GET
 
 > Use this method to calculate the salary of an Employee
 
-
 ###### Query Parameter
 
 | Field         | Data Type | Required  | Example |
 | ------------- |:---------:| ---------:| -------:|
-| employeeName  | String    | false     | user001 |
-
+| employeeName  | String    | true      | user001 |
 
 ###### Header
 
 | Field              | Data Type | Required | Example |
 | ------------------ |:---------:| --------:| -------:|
 | performanceRating  | Number    | true     | 4.2     |
-
 
 <details>
 <summary>Sample Curl Request...</summary>
@@ -369,23 +331,19 @@ curl --location --request GET 'http://localhost:3000/newSalary?employeeName=user
 </p>
 </details>
 
-
 <details>
-<summary>Response Body...</summary>
+<summary>Sample Response Body...</summary>
 <p>
 
 ```
 {
-    "newSalary": 252000
+    "newSalary": 90000
 }
 ```
 
 </p>
 </details>
 
-<!-- /newSalarystop -->
-
-<!-- detailsstop -->
 
 [here]: https://nodejs.org/en/download/
 [link]: https://docs.mongodb.com/manual/installation/

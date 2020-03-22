@@ -3,12 +3,6 @@ const { GENDER_CONSTANTS, TITLE_CONSTANTS } = require('../constants/employees_co
 
 // Create and Save new Employees
 exports.create = async (req, res) => {
-    // Validate request
-    // if(!req.body.firstName) {
-    //     return res.status(400).send({
-    //         message: "firstName can not be empty"
-    //     });
-    // };
 
     // Create Employees
     const employee = new Employees({
@@ -16,8 +10,7 @@ exports.create = async (req, res) => {
         emailId: req.body.emailId,
         gender: req.body.gender,
         title: req.body.title,
-        currentSalary: req.body.currentSalary,
-        experience: req.body.experience,
+        currentSalary: req.body.currentSalary
     });
 
     const employeeData = await Employees.findOne({ employeeName: employee.employeeName });
@@ -78,7 +71,7 @@ exports.findAll = async (req, res) => {
 };
 
 // Validate that the Gender passed in the Query Parameter is Valid or not
-function _isGenderValid(gender) {
+const _isGenderValid = (gender) => {
     if ((gender === GENDER_CONSTANTS.MALE) || (gender === GENDER_CONSTANTS.FEMALE)) {
         return true;
     } else {
@@ -87,7 +80,7 @@ function _isGenderValid(gender) {
 }
 
 // Get all the employees based on the Gender passed in the Query Parameter
-function _filterDataBasedOnGender(employees, gender) {
+const _filterDataBasedOnGender = (employees, gender) => {
     let _filteredEmployeesBasedOnGender = employees.filter((employee) => {
         if (employee.gender === gender) {
             return true;
@@ -97,7 +90,7 @@ function _filterDataBasedOnGender(employees, gender) {
 };
 
 // Validate that the Title passed in the Query Parameter is Valid or not
-function _isTitleValid(title) {
+const _isTitleValid = (title) => {
     if ((title === TITLE_CONSTANTS.ENGINEER) || (title === TITLE_CONSTANTS.MANAGER) || (title === TITLE_CONSTANTS.DIRECTOR)) {
         return true;
     } else {
@@ -106,7 +99,7 @@ function _isTitleValid(title) {
 }
 
 // Get all the employees based on the Title passed in the Query Parameter
-function _filterDataBasedOnTitle(employees, title) {
+const _filterDataBasedOnTitle = (employees, title) => {
     let _filteredEmployeesBasedOnTitle = employees.filter((employee) => {
         if (employee.title === title) {
             return true;
@@ -120,7 +113,7 @@ exports.findOne = (req, res) => {
 
     // Validate that if the delay query parameter is passed, then it responds with 400 status,
     // if it's not a Number
-    setTimeout(async function () {
+    setTimeout(async () => {
         if((req.query.delay) && (isNaN(parseInt (req.query.delay)))) {
             return res.status(400).send({
                 message: "delay should be a number in seconds"
@@ -131,14 +124,14 @@ exports.findOne = (req, res) => {
             .then(employee => {
                 if (!employee) {
                     return res.status(404).send({
-                        message: `Employee not found with employeeName ${req.params.employeeName}`
+                        message: `Employee not found with employeeName ${req.params.employeeName}, note that employeeName is a case senstive field`
                     });
                 }
                 res.send(employee);
             }).catch(err => {
                 if (err.kind === 'ObjectId') {
                     return res.status(404).send({
-                        message: `Employee not found with employeeName ${req.params.employeeName}`
+                        message: `Employee not found with employeeName ${req.params.employeeName}, note that employeeName is a case senstive field`
                     });
                 }
                 return res.status(500).send({
@@ -159,20 +152,19 @@ exports.update = async (req, res) => {
         emailId: req.body.emailId,
         gender: req.body.gender,
         title: req.body.title,
-        currentSalary: req.body.currentSalary,
-        experience: req.body.experience,
+        currentSalary: req.body.currentSalary
     }, { new: true })
         .then(employee => {
             if (!employee) {
                 return res.status(404).send({
-                    message: `Employee not found with employeeName ${req.params.employeeName}`
+                    message: `Employee not found with employeeName ${req.params.employeeName}, note that employeeName is a case senstive field`
                 });
             }
             res.send(employee);
         }).catch(err => {
             if (err.kind === 'ObjectId') {
                 return res.status(404).send({
-                    message: `Employee not found with employeeName ${req.params.employeeName}`
+                    message: `Employee not found with employeeName ${req.params.employeeName}, note that employeeName is a case senstive field`
                 });
             }
             return res.status(500).send({
@@ -187,14 +179,14 @@ exports.delete = async (req, res) => {
         .then(employee => {
             if (!employee) {
                 return res.status(404).send({
-                    message: `Employee not found with employeeName ${req.params.employeeName}`
+                    message: `Employee not found with employeeName ${req.params.employeeName}, note that employeeName is a case senstive field`
                 });
             }
             res.send({ message: "Employee deleted successfully!" });
         }).catch(err => {
             if (err.kind === 'ObjectId' || err.employeeName === 'NotFound') {
                 return res.status(404).send({
-                    message: `Employee not found with employeeName ${req.params.employeeName}`
+                    message: `Employee not found with employeeName ${req.params.employeeName}, note that employeeName is a case senstive field`
                 });
             }
             return res.status(500).send({
