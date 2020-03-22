@@ -323,7 +323,7 @@ Salary Multiplier is:
 
 So, if the Current Salary of a Manager is 80000 and she has a performance rating of 4.5, then her New Salary will be:
 
-80000 + (4.5 * 3000) = **93500**
+80000 + (4.5 * 3000) = 93500
 ```
 
 It contains the following Route:
