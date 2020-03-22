@@ -57,18 +57,18 @@ The employees API can be used to create/store employee information. It contains 
 
 ##### POST
 
-> Use this method to add a new employee to the DB
+> Use this method to add a new employee to the DB. This example shows usage of **Body and Optional Field (Gender)** in the request.
 
 
 ###### Body
 
-| Field         | Data Type | Required | Example |
-| ------------- |:---------:| --------:| -------:|
-| employeeName  | String    | true     | user001 |
-| emailId       | String    | true     | a@b.com |
-| gender        | String    | false    | male    |
-| title         | String    | true     | manager |
-| currentSalary | Number    | true     | 100000  |
+| Field         | Data Type | Required | Example              |
+| ------------- |:---------:| --------:| --------------------:|
+| employeeName  | String    | true     | user001              |
+| emailId       | String    | true     | user001@TestZone.com |
+| gender        | String    | false    | female               |
+| title         | String    | true     | manager              |
+| currentSalary | Number    | true     | 80000                |
 
 <details>
 <summary> Sample Curl Request...</summary>
@@ -79,10 +79,10 @@ curl --location --request POST 'http://localhost:3000/employees' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "employeeName": "user001",
-    "emailId": "a@b.com",
-    "gender": "male",
+    "emailId": "user001@TestZone.com",
+    "gender": "female",
     "title": "manager",
-    "currentSalary": 100000
+    "currentSalary": 80000
 }'
 ```
 
@@ -98,10 +98,10 @@ curl --location --request POST 'http://localhost:3000/employees' \
 {
     "_id": "5e7115d803b7cc50f8f93863",
     "employeeName": "user001",
-    "emailId": "a@b.com",
-    "gender": "male",
+    "emailId": "user001@TestZone.com",
+    "gender": "female",
     "title": "manager",
-    "currentSalary": 100000,
+    "currentSalary": 80000,
     "createdAt": "2020-03-17T18:24:24.365Z",
     "updatedAt": "2020-03-17T18:24:24.365Z",
     "__v": 0
@@ -114,54 +114,7 @@ curl --location --request POST 'http://localhost:3000/employees' \
 
 ##### GET
 
-> Use this method to get information of all the employees available in the DB
-
-<details>
-<summary>Sample Curl Request...</summary>
-<p>
-
-```
-curl --location --request GET 'http://localhost:3000/employees/user001' \
---header 'Content-Type: application/json'
-```
-
-</p>
-</details>
-
-<details>
-<summary>Sample Response Body...</summary>
-<p>
-
-```
-{
-    "_id": "5e7115d803b7cc50f8f93863",
-    "employeeName": "user001",
-    "emailId": "a@b.com",
-    "gender": "male",
-    "title": "manager",
-    "currentSalary": 100000,
-    "createdAt": "2020-03-17T18:24:24.365Z",
-    "updatedAt": "2020-03-17T18:24:24.365Z",
-    "__v": 0
-}
-```
-
-</p>
-</details>
-
-#### /employees/:employeeName
-
-> **Methods Supported are GET, PUT and GET**
-
-##### GET
-
-> Use this method to get the information of an employee
-
-###### Path Parameter
-
-| Field         | Data Type | Required | Example |
-| ------------- |:---------:| --------:| -------:|
-| employeeName  | String    | false     | user001 |
+> Use this method to get information of all the employees available in the DB. This example simply shows how GET Method is being used to fetch multiple records.
 
 <details>
 <summary>Sample Curl Request...</summary>
@@ -184,15 +137,80 @@ curl --location --request GET 'http://localhost:3000/employees' \
     {
         "_id": "5e7115d803b7cc50f8f93863",
         "employeeName": "user001",
-        "emailId": "a@b.com",
-        "gender": "male",
+        "emailId": "user001@TestZone.com",
+        "gender": "80000",
         "title": "manager",
-        "currentSalary": 100000,
+        "currentSalary": 80000,
         "createdAt": "2020-03-17T18:24:24.365Z",
         "updatedAt": "2020-03-17T18:24:24.365Z",
         "__v": 0
-    }
+    },
+        {
+        "_id": "5e7115d803b7cc50f8f93863",
+        "employeeName": "user002",
+        "emailId": "user002@TestZone.com",
+        "gender": "male",
+        "title": "engineer",
+        "currentSalary": 60000,
+        "createdAt": "2020-03-17T18:17:24.365Z",
+        "updatedAt": "2020-03-17T18:17:24.365Z",
+        "__v": 0
+    },
+
 ]
+```
+
+</p>
+</details>
+
+#### /employees/:employeeName
+
+> **Methods Supported are GET, PUT and GET**
+
+##### GET
+
+> Use this method to get the information of an employee. This example shows usage of **Path Parameter & Query Parameter (API response delay time in seconds)** in the request.
+
+###### Path Parameter
+
+| Field         | Data Type | Required | Example |
+| ------------- |:---------:| --------:| -------:|
+| employeeName  | String    | true     | user001 |
+
+###### Query Parameter
+
+| Field  | Data Type | Required | Example |
+| ------ |:---------:| --------:| -------:|
+| delay  | Number    | false    | 4       |
+
+<details>
+<summary>Sample Curl Request...</summary>
+<p>
+
+```
+curl --location --request GET 'http://localhost:3000/employees/user001?delay=4' \
+--header 'Content-Type: application/json'
+```
+
+</p>
+</details>
+
+<details>
+<summary>Sample Response Body...</summary>
+<p>
+
+```
+{
+    "_id": "5e7115d803b7cc50f8f93863",
+    "employeeName": "user001",
+    "emailId": "user001@TestZone.com",
+    "gender": "female",
+    "title": "manager",
+    "currentSalary": 80000,
+    "createdAt": "2020-03-17T18:24:24.365Z",
+    "updatedAt": "2020-03-17T18:24:24.365Z",
+    "__v": 0
+}
 ```
 
 </p>
@@ -200,23 +218,23 @@ curl --location --request GET 'http://localhost:3000/employees' \
 
 ##### PUT
 
-> Use this method to update the information of an employee
+> Use this method to update the information of an employee. This example shows usage of **Body & Path Parameter** in the request.
 
 ###### Path Parameter
 
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
-| employeeName  | String    | false     | user001 |
+| employeeName  | String    | true     | user001 |
 
 ###### Body
 
-| Field         | Data Type | Required | Example |
-| ------------- |:---------:| --------:| -------:|
-| employeeName  | String    | true     | user001 |
-| emailId       | String    | true     | a@b.com |
-| gender        | String    | false    | male    |
-| title         | String    | true     | manager |
-| currentSalary | Number    | true     | 100000  |
+| Field         | Data Type | Required | Example              |
+| ------------- |:---------:| --------:| --------------------:|
+| employeeName  | String    | true     | user001              |
+| emailId       | String    | true     | user001@TestZone.com |
+| gender        | String    | false    | female               |
+| title         | String    | true     | manager              |
+| currentSalary | Number    | true     | 80000                |
 
 <details>
 <summary> Sample Curl Request...</summary>
@@ -227,10 +245,10 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "employeeName": "user001",
-    "emailId": "a@b.com",
-    "gender": "male",
+    "emailId": "user001@TestZone.com",
+    "gender": "female",
     "title": "director",
-    "currentSalary": 120000
+    "currentSalary": 100000
 }'
 ```
 
@@ -245,10 +263,10 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
 {
     "_id": "5e7115d803b7cc50f8f93863",
     "employeeName": "user001",
-    "emailId": "a@b.com",
-    "gender": "male",
+    "emailId": "user001@TestZone.com",
+    "gender": "female",
     "title": "director",
-    "currentSalary": 120000,
+    "currentSalary": 100000,
     "createdAt": "2020-03-17T18:24:24.365Z",
     "updatedAt": "2020-03-20T20:50:03.590Z",
     "__v": 0
@@ -260,13 +278,13 @@ curl --location --request PUT 'http://localhost:3000/employees/user001' \
 
 ##### DELETE
 
-> Use this method to delete the information of an employee
+> Use this method to delete the information of an employee. This example shows usage of **Path Parameter** in the request.
 
 ###### Path Parameter
 
 | Field         | Data Type | Required | Example |
 | ------------- |:---------:| --------:| -------:|
-| employeeName  | String    | false     | user001 |
+| employeeName  | String    | true     | user001 |
 
 <details>
 <summary> Sample Curl Request...</summary>
@@ -294,7 +312,21 @@ curl --location --request DELETE 'http://localhost:3000/employees/user001' \
 </details>
 
 ### `newSalary`
-The newSalary API can be used to calculate the Salary . It contains the following Route:
+This API can be used to calculate the New Salary of an employee. The calculation logic is as below:
+
+```
+New Salary = Current Salary + (Performance Rating * Salary Multiplier). 
+Salary Multiplier is:
+2000 for engineer
+3000 for manager
+4000 for director
+
+So, if the Current Salary of a Manager is 80000 and she has a performance rating of 4.5, then her New Salary will be:
+
+80000 + (4.5 * 3000) = **93500**
+```
+
+It contains the following Route:
 
 * /newSalary
 
@@ -304,7 +336,7 @@ The newSalary API can be used to calculate the Salary . It contains the followin
 
 ##### GET
 
-> Use this method to calculate the salary of an Employee
+> Use this method to calculate the salary of an Employee. This example shows usage of **Query Parameter & Header** in the request.
 
 ###### Query Parameter
 
@@ -316,7 +348,7 @@ The newSalary API can be used to calculate the Salary . It contains the followin
 
 | Field              | Data Type | Required | Example |
 | ------------------ |:---------:| --------:| -------:|
-| performanceRating  | Number    | true     | 4.2     |
+| performanceRating  | Number    | true     | 4.5     |
 
 <details>
 <summary>Sample Curl Request...</summary>
@@ -325,7 +357,7 @@ The newSalary API can be used to calculate the Salary . It contains the followin
 ```
 curl --location --request GET 'http://localhost:3000/newSalary?employeeName=user001' \
 --header 'Content-Type: application/json' \
---header 'performanceRating: 4.2'
+--header 'performanceRating: 4.5'
 ```
 
 </p>
@@ -337,7 +369,7 @@ curl --location --request GET 'http://localhost:3000/newSalary?employeeName=user
 
 ```
 {
-    "newSalary": 90000
+    "newSalary": 93500
 }
 ```
 
