@@ -24,7 +24,11 @@ exports.Calculate = (req, res) => {
         .get(req.query.employeeName)
         .expect(200)
         .end((err, employeeResponse) => {
-            if (err) throw err;
+            if (err) {
+                return res.status(404).send({
+                    message: `Employee not found with employeeName ${req.query.employeeName}, note that employeeName is a case senstive field`
+                });
+            }  
             let appraisal = req.header('performanceRating') * getSalaryMultiplier (employeeResponse);
             const newSalaryResponse = employeeResponse.body.currentSalary + appraisal
             res.send({
