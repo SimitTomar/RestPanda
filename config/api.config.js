@@ -1,7 +1,12 @@
-const port= 3000;
-const employeesEndpoint = `http://localhost:${port}/employees/`;
+const employeesPort= 3000;
+const employeesEndpoint = `http://localhost:${employeesPort}/employees/`;
+
+const newSalaryPort= 3001;
+const newSalaryEndpoint = `http://localhost:${newSalaryPort}/newSalary/`;
 
 module.exports = {
-    port,
-    employeesEndpoint
+    employeesPort,
+    employeesEndpoint,
+    newSalaryPort,
+    newSalaryEndpoint
 }
