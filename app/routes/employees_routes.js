@@ -1,18 +1,32 @@
-module.exports = (app) => {
+var express = require('express');
+
+var router = express.Router();
+
+// module.exports = function (app) {
     const employees = require('../controllers/employees_controller.js');
 
+    router.get('/', function(req, res) {
+        res.send('GET handler for /employees route.');
+    });
+    
+    router.post('/', function(req, res) {
+        res.send('POST handler for /employees route.');
+    });
+
+
     // Create a new employee
-    app.post('/employees', employees.create);
+    router.post('/employees', employees.create);
 
     // Retrieve all employees
-    app.get('/employees', employees.findAll);
+    router.get('/employees', employees.findAll);
 
     // Retrieve a single employee with employeeName
-    app.get('/employees/:employeeName', employees.findOne);
+    router.get('/employees/:employeeName', employees.findOne);
 
     // Update a customer with employeeName
-    app.put('/employees/:employeeName', employees.update);
+    router.put('/employees/:employeeName', employees.update);
 
     // Delete a customer with employeeName
-    app.delete('/employees/:employeeName', employees.delete);
-}
+    router.delete('/employees/:employeeName', employees.delete);
+// }
+module.exports = router;
