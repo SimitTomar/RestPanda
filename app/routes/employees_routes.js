@@ -15,7 +15,7 @@ var router = express.Router();
 
 
     // Create a new employee
-    router.post('/employees', employees.create);
+    router.post('/employees', employees.insert);
 
     // Retrieve all employees
     router.get('/employees', employees.findAll);
