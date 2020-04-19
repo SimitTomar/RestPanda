@@ -57,7 +57,7 @@ The employees API can be used to create/store employee information. It contains 
 
 ##### POST
 
-> Use this method to add a new employee to the DB. This example shows usage of **Body and Optional Field (Gender)** in the request.
+> Use this method to add new employee(s) to the DB. This example shows usage of **Body and Optional Field (Gender)** in the request.
 
 
 ###### Body
@@ -77,13 +77,19 @@ The employees API can be used to create/store employee information. It contains 
 ```
 curl --location --request POST 'http://localhost:3000/employees' \
 --header 'Content-Type: application/json' \
---data-raw '{
+--data-raw '[{
     "employeeName": "user001",
     "emailId": "user001@TestZone.com",
     "gender": "female",
     "title": "manager",
-    "currentSalary": 80000
-}'
+    "currentSalary": "80000"
+}, {
+    "employeeName": "user002",
+    "emailId": "user002@TestZone.com",
+    "gender": "female",
+    "title": "director",
+    "currentSalary": "80000"
+}]'
 ```
 
 </p>
@@ -95,17 +101,14 @@ curl --location --request POST 'http://localhost:3000/employees' \
 <p>
 
 ```
-{
-    "_id": "5e7115d803b7cc50f8f93863",
-    "employeeName": "user001",
-    "emailId": "user001@TestZone.com",
-    "gender": "female",
-    "title": "manager",
-    "currentSalary": 80000,
-    "createdAt": "2020-03-17T18:24:24.365Z",
-    "updatedAt": "2020-03-17T18:24:24.365Z",
-    "__v": 0
-}
+[
+    {
+        "message": "user001 employee created"
+    },
+    {
+        "message": "user002 employee created"
+    }
+]
 ```
 
 </p>

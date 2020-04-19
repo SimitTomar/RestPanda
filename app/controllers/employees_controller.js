@@ -1,36 +1,58 @@
 const Employees = require('../models/employees_model.js');
 const { GENDER_CONSTANTS, TITLE_CONSTANTS } = require('../constants/employees_constants');
 
-// Create and Save new Employees
-exports.create = async (req, res) => {
+// Insert new Employees
+exports.insert = async (req, res) => {
 
-    // Create Employees
-    const employee = new Employees({
-        employeeName: req.body.employeeName,
-        emailId: req.body.emailId,
-        gender: req.body.gender,
-        title: req.body.title,
-        currentSalary: req.body.currentSalary
-    });
+    // Perform initial validations on the request
+    if (!Array.isArray(req.body) || !req.body.length) {
 
-    const employeeData = await Employees.findOne({ employeeName: employee.employeeName });
-    if (employeeData === null) {
-        // Save Employee in the database
-        employee.save()
-            .then(data => {
-                res
-                    .status(201)
-                    .send(data);
-            }).catch(err => {
-                res.status(500).send({
-                    message: err.message || "Some error occurred while creating the Employee."
-                });
-            });
-    } else {
         res.status(500).send({
-            message: `Employee ${employee.employeeName} already exists`
+            message: `employees body should be an array of json objects!`
         });
+        return;
+
+    } else{
+
+        for (var employeeBody of req.body) {
+             if (Object.keys(employeeBody).length === 0 && employeeBody.constructor === Object){
+                res.status(500).send({
+                    message: `employeeBody can't be empty!`
+                });
+                return;
+             } else{
+                const employeeData = await Employees.findOne({ employeeName: employeeBody.employeeName });
+                if (employeeData !== null) {
+                    res.status(500).send({
+                        message: `Employee ${employeeBody.employeeName} already exists, ensure that all employeeName of the array are unique!`
+                    });
+                    return;
+                }
+             }
+        }
     }
+
+    // Inser mutiple records in one go
+    Employees.insertMany(req.body, async function (err, data) {
+        if (err) {
+            res.status(500).send({
+                message: err.message || "Some error occurred while creating the Employee."
+            });
+        } else {
+            res.status(201).send(
+                await _getResponse(data)
+            );
+        }
+
+        async function _getResponse(data) {
+            let employees = [];
+            await data.forEach(element => {
+                employees.push({ message: `${element.employeeName} employee created` });
+            })
+            return employees;
+        }
+
+    });
 
 
 };
@@ -114,7 +136,7 @@ exports.findOne = (req, res) => {
     // Validate that if the delay query parameter is passed, then it responds with 400 status,
     // if it's not a Number
     setTimeout(async () => {
-        if((req.query.delay) && (isNaN(parseInt (req.query.delay)))) {
+        if ((req.query.delay) && (isNaN(parseInt(req.query.delay)))) {
             return res.status(400).send({
                 message: "delay should be a number in seconds"
             });
@@ -138,7 +160,7 @@ exports.findOne = (req, res) => {
                     message: `Error retrieving employee with employeeName ${req.params.employeeName}`
                 });
             })
-    }, req.query.delay*1000)
+    }, req.query.delay * 1000)
 
 
 };
