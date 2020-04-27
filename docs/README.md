@@ -7,17 +7,21 @@ Install mongodb by following the instructions given on this [link]
 
 Install npm dependencies
 
-```bash
+```
 npm install
 ```
 
-Run Server
+Start employees api:
 
-```bash
-npm run start
+```
+npm run employees
 ```
 
-You can browse the apis at <http://localhost:3000>
+Start newSalary api:
+
+```
+npm run newSalary
+```
 
 ____________________________________
 
