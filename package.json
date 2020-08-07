@@ -8,11 +8,20 @@
     "newSalary": "nodemon newSalary.js"
   },
   "keywords": [
+    "Rest",
+    "API",
+    "Application Programming Interface",
+    "Mock Server",
+    "Prototype",
+    "Demos",
+    "Courses",
+    "Bolierplate"
+    "Sample API",
+    "Mock API",
     "Express",
     "RestAPI",
     "MongoDB",
-    "Mongoose",
-    "Notes"
+    "Mongoose"
   ],
   "author": "Simit Tomar",
   "license": "MIT",
